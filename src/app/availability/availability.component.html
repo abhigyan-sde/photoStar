@@ -1,0 +1,27 @@
+<h2 class="calendar-title">Check Availability</h2>
+
+<div class="calendar">
+  <div class="calendar-header">
+    <span>{{ displayedDate | date: 'MMMM yyyy' }}</span>
+  </div>
+  <div class="calendar-nav">
+    <button (click)="navigateMonth(-1)" [disabled]="isPrevDisabled()">&#8592; Prev</button>
+    <button (click)="navigateMonth(1)" [disabled]="isNextDisabled()">Next &#8594;</button>
+  </div>
+  
+  <div class="calendar-grid">
+    <div class="day-label" *ngFor="let d of ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']">
+      {{ d }}
+    </div>
+
+    <div *ngFor="let day of getCalendarDays()"
+         class="calendar-day"
+         [class.available]="day.date && day.isAvailable"
+         [class.unavailable]="day.date && !day.isAvailable"
+         [class.empty]="!day.date"
+         (click)="onDateClick(day.date)">
+      {{ day.date?.getDate() }}
+    </div>
+  </div>
+</div>
+

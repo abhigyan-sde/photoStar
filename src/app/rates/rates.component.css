@@ -1,0 +1,54 @@
+.rates-container {
+    font-family: 'Lora', serif;
+    background-color: #F5F3EB; /* soft parchment beige */
+    padding: 3rem 2rem;
+    text-align: center;
+    min-height: 100vh;
+  }
+  
+  .rates-container h2 {
+    font-family: 'Playfair Display', serif;
+    color: #3E6259; /* forest green */
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .packages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .package-card {
+    background-color: #fffefc;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .package-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .package-card h3 {
+    font-size: 1.5rem;
+    color: #8B5E3C; /* deep warm brown */
+    margin-bottom: 0.5rem;
+  }
+  
+  .price {
+    font-size: 1.3rem;
+    color: #D4A373; /* soft golden */
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #333;
+  }
+  

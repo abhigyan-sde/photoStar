@@ -1,0 +1,18 @@
+<div class="gallery-grid">
+    <img *ngFor="let img of images; let i = index"
+         [src]="img"
+         (click)="openImage(i)"
+         class="gallery-img"
+         alt="Gallery image" />
+  </div>
+  
+  <!-- Modal for enlarged view -->
+  <div class="modal" *ngIf="selectedImage">
+    <div class="modal-content">
+      <span class="close" (click)="closeImage()">×</span>
+      <img [src]="selectedImage" alt="Enlarged image" />
+      <button class="nav left" (click)="prevImage()">&#10094;</button>
+      <button class="nav right" (click)="nextImage()">&#10095;</button>
+    </div>
+  </div>
+  

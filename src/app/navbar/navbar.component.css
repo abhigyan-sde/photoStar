@@ -1,0 +1,60 @@
+.navbar {
+  font-family: 'Playfair Display', serif;
+  background-color: #3E6259; /* forest green */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Layout sections */
+.navbar-left,
+.navbar-right {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Link styling */
+.navbar a {
+  text-decoration: none;
+  color: #F5F3EB; /* light beige */
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline */
+.navbar a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #D4A373; /* golden highlight */
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+/* Hover effect */
+.navbar a:hover {
+  color: #D4A373;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Active route styling */
+.navbar .active-link {
+  font-weight: bold;
+  color: #D4A373;
+}
+
+.navbar .active-link::after {
+  width: 100%;
+}

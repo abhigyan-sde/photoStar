@@ -1,0 +1,76 @@
+.welcome-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.slide:nth-child(1) { background-image: url('/assets/teton.jpg'); }
+.slide:nth-child(2) { background-image: url('/assets/IMG_1102.jpeg'); }
+.slide:nth-child(3) { background-image: url('/assets/IMG_2105.jpeg'); }
+.slide:nth-child(4) { background-image: url('/assets/IMG_2274.jpeg'); }
+.slide:nth-child(5) { background-image: url('/assets/IMG_2311.jpeg'); }
+.slide:nth-child(6) { background-image: url('/assets/IMG_2362.jpeg'); }
+
+/* Keyframes for fading in and out */
+@keyframes slideShow {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  50%  { opacity: 1; }
+  80%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Apply the keyframe animation to the slides */
+.slide:nth-child(1) { animation: slideShow 30s infinite; }
+.slide:nth-child(2) { animation: slideShow 30s infinite 6s; }
+.slide:nth-child(3) { animation: slideShow 30s infinite 12s; }
+.slide:nth-child(4) { animation: slideShow 30s infinite 18s; }
+.slide:nth-child(5) { animation: slideShow 30s infinite 24s; }
+.slide:nth-child(6) { animation: slideShow 30s infinite 30s; }
+
+.welcome-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #F5F3EB;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 80%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-overlay h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-overlay p {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
