@@ -1,25 +1,33 @@
 .footer {
-  font-family: 'Playfair Display', serif;
-  background-color: #3E6259; /* match navbar */
-  padding: 1.5rem 2rem;
+  background: var(--color-surface);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+  padding: 2rem 1rem;
   text-align: center;
-  border-top: 1px solid #2e4b45;
-  margin-top: auto;
+
+  margin-top: var(--spacing-xl);
 }
 
+
+/* Text */
 .contact-info p {
-  margin: 0.5rem 0;
-  color: #F5F3EB; /* light text */
-  font-size: 1rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
 }
 
+.contact-info p:first-child {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+}
+
+
+/* Icons */
 .social-icons a {
-  margin: 0 0.75rem;
-  color: #F5F3EB;
-  font-size: 1.3rem;
-  transition: color 0.3s ease;
+  color: var(--color-muted);
+  transition: var(--transition);
 }
 
 .social-icons a:hover {
-  color: #D4A373; /* golden accent on hover */
+  color: var(--color-primary);
+  transform: translateY(-2px);
 }

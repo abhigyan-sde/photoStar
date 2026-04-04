@@ -1,54 +1,61 @@
-.rates-container {
-    font-family: 'Lora', serif;
-    background-color: #F5F3EB; /* soft parchment beige */
-    padding: 3rem 2rem;
-    text-align: center;
-    min-height: 100vh;
-  }
-  
-  .rates-container h2 {
-    font-family: 'Playfair Display', serif;
-    color: #3E6259; /* forest green */
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .packages {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
-  .package-card {
-    background-color: #fffefc;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 2rem 1.5rem;
-    width: 250px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
-  }
-  
-  .package-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .package-card h3 {
-    font-size: 1.5rem;
-    color: #8B5E3C; /* deep warm brown */
-    margin-bottom: 0.5rem;
-  }
-  
-  .price {
-    font-size: 1.3rem;
-    color: #D4A373; /* soft golden */
-    margin-bottom: 1rem;
-    font-weight: bold;
-  }
-  
-  .description {
-    font-size: 1rem;
-    color: #333;
-  }
-  
+/* Section Title */
+.section-title {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--color-text);
+}
+
+
+/* Packages Layout */
+.packages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+
+/* Card */
+.package-card {
+  background: var(--color-surface);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+
+  box-shadow: var(--shadow-soft);
+
+  text-align: center;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Title */
+.package-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+
+/* Price */
+.price {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+
+/* Description */
+.description {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}

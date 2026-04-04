@@ -1,60 +1,72 @@
 .navbar {
-  font-family: 'Playfair Display', serif;
-  background-color: #3E6259; /* forest green */
-  padding: 1rem 2rem;
+  font-family: var(--font-heading);
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+
+  padding: 1rem 3rem;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
   position: sticky;
   top: 0;
   z-index: 1000;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Layout sections */
+
+/* Layout */
 .navbar-left,
 .navbar-right {
   display: flex;
   gap: 2rem;
 }
 
-/* Link styling */
+
+/* Links */
 .navbar a {
-  text-decoration: none;
-  color: #F5F3EB; /* light beige */
-  font-size: 1.1rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: var(--color-text);
   position: relative;
-  transition: color 0.3s ease;
 }
 
-/* Hover underline */
+
+/* Underline */
 .navbar a::after {
   content: '';
-  display: block;
-  height: 2px;
-  width: 0;
-  background: #D4A373; /* golden highlight */
-  transition: width 0.3s ease;
   position: absolute;
-  bottom: -4px;
   left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--color-primary);
+  transition: width 0.3s ease;
 }
 
-/* Hover effect */
+
+/* Hover */
 .navbar a:hover {
-  color: #D4A373;
+  color: var(--color-primary);
 }
 
 .navbar a:hover::after {
   width: 100%;
 }
 
-/* Active route styling */
-.navbar .active-link {
-  font-weight: bold;
-  color: #D4A373;
+
+/* Active */
+.navbar .active {
+  color: var(--color-primary);
 }
 
-.navbar .active-link::after {
+.navbar .active::after {
   width: 100%;
 }
