@@ -1,9 +1,6 @@
 .welcome-container {
   position: relative;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
 }
 
@@ -13,7 +10,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
 }
 
 .slide {
@@ -23,54 +19,54 @@
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 2s ease-in-out;
+  animation: fadeSlide linear infinite;
+  animation-duration: calc(6 * 5s); /* total duration = numSlides * slideDuration */
+  animation-fill-mode: both;
 }
 
-.slide:nth-child(1) { background-image: url('/assets/teton.jpg'); }
-.slide:nth-child(2) { background-image: url('/assets/IMG_1102.jpeg'); }
-.slide:nth-child(3) { background-image: url('/assets/IMG_2105.jpeg'); }
-.slide:nth-child(4) { background-image: url('/assets/IMG_2274.jpeg'); }
-.slide:nth-child(5) { background-image: url('/assets/IMG_2311.jpeg'); }
-.slide:nth-child(6) { background-image: url('/assets/IMG_2362.jpeg'); }
-
-/* Keyframes for fading in and out */
-@keyframes slideShow {
-  0%   { opacity: 0; }
-  20%  { opacity: 1; }
-  50%  { opacity: 1; }
-  80%  { opacity: 0; }
+/* Each slide fades in and out smoothly */
+@keyframes fadeSlide {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  25% { opacity: 1; }
+  33% { opacity: 0; }
   100% { opacity: 0; }
 }
 
-/* Apply the keyframe animation to the slides */
-.slide:nth-child(1) { animation: slideShow 30s infinite; }
-.slide:nth-child(2) { animation: slideShow 30s infinite 6s; }
-.slide:nth-child(3) { animation: slideShow 30s infinite 12s; }
-.slide:nth-child(4) { animation: slideShow 30s infinite 18s; }
-.slide:nth-child(5) { animation: slideShow 30s infinite 24s; }
-.slide:nth-child(6) { animation: slideShow 30s infinite 30s; }
-
+/* Overlay fade */
 .welcome-overlay {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
   text-align: center;
-  color: #F5F3EB;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 80%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  color: var(--color-surface);
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  transition: opacity 2s ease;
+  opacity: 1;
 }
 
+.welcome-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Overlay text */
 .welcome-overlay h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
   margin-bottom: 1rem;
+  color: var(--color-primary);
 }
 
 .welcome-overlay p {
-  font-family: 'Lora', serif;
-  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
   max-width: 700px;
   margin: 0 auto;
+  color: var(--color-text);
 }
