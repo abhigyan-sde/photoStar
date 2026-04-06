@@ -1,33 +1,61 @@
+/* Footer container */
 .footer {
   background: var(--color-surface);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-
   padding: 2rem 1rem;
   text-align: center;
-
   margin-top: var(--spacing-xl);
 }
 
-
-/* Text */
-.contact-info p {
-  color: var(--color-muted);
-  font-size: 0.9rem;
+/* Container inside footer for spacing/alignment */
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem; /* space between icons and text */
 }
 
-.contact-info p:first-child {
-  font-family: var(--font-heading);
-  color: var(--color-text);
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 1rem;
 }
 
-
-/* Icons */
 .social-icons a {
   color: var(--color-muted);
+  font-size: 1.2rem;
   transition: var(--transition);
 }
 
 .social-icons a:hover {
   color: var(--color-primary);
   transform: translateY(-2px);
+}
+
+/* Footer text */
+.footer-text p {
+  margin: 0;           /* Remove default margin */
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* First paragraph bold */
+.footer-text p:first-child {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+}
+
+/* Space between the two paragraphs */
+.footer-text p + p {
+  margin-top: 0.1rem;  /* Adjust this for desired spacing */
+}
+
+/* Footer credit link */
+.footer-text a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
 }

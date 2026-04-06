@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CloudinaryService } from '../service/cloudinary.service';
 
 @Component({
   selector: 'app-gallery',
@@ -8,21 +9,18 @@ import { Component } from '@angular/core';
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css'
 })
-export class GalleryComponent {
-
-  images = [
-    'assets/IMG_1102.jpeg',
-    'assets/IMG_2105.jpeg',
-    'assets/IMG_2274.jpeg',
-    'assets/IMG_2311.jpeg',
-    'assets/IMG_2362.jpeg',
-    'assets/IMG_2367.jpeg',
-    'assets/IMG_2368.jpeg',
-    'assets/IMG_2881.jpeg',
-    'assets/IMG_2915.jpeg'
-  ];
-
+export class GalleryComponent implements OnInit{
+  images: string[] = []
   selectedImageIndex: number | null = null;
+
+  constructor(private cloudinaryService : CloudinaryService){}
+
+  ngOnInit(): void {
+    this.cloudinaryService.getImages().subscribe({
+      next: (data) => this.images = data,
+      error: (err) => console.log('Error loading images', err)
+    });
+  }
 
   openImage(index: number) {
     this.selectedImageIndex = index;

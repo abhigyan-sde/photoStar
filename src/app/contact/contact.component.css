@@ -1,75 +1,68 @@
-/* Section wrapper */
+/* Section */
 .contact.section {
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   background: var(--color-bg);
-}
-
-/* Container for centering content */
-.contact .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0 2rem;
-}
-
-/* Section Title */
-.contact .section-title {
   text-align: center;
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  color: var(--color-text);
 }
 
-/* Form Layout */
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
+/* Subtext */
+.contact-subtext {
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+  color: var(--color-muted);
+  font-size: 1rem;
+}
+
+/* Links container */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Contact card */
+.contact-card {
+  width: 140px;
+  height: 140px;
 
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-}
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
 
-/* Form Group */
-.form-group {
-  width: 100%;
-}
-
-/* Inputs & Textarea */
-input,
-textarea {
-  width: 100%;
-  padding: 0.9rem 1rem;
-
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-
-  background: var(--color-surface);
+  text-decoration: none;
   color: var(--color-text);
 
+  background: var(--color-surface);
+  border-radius: 16px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   transition: var(--transition);
 }
 
-/* Focus State */
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(198, 169, 126, 0.2);
+/* Icon */
+.contact-card i {
+  font-size: 1.8rem;
 }
 
-/* Placeholder */
-input::placeholder,
-textarea::placeholder {
+/* Hover effect */
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  color: var(--color-primary);
+}
+
+/* Label */
+.contact-card span {
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+}
+
+/* Fallback email */
+.contact-email-fallback {
+  margin-top: 2rem;
+  font-size: 0.9rem;
   color: var(--color-muted);
-}
-
-/* Submit Button */
-.contact-form .button {
-  align-self: center;
-  margin-top: 1rem;
 }
