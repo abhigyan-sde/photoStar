@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable, shareReplay} from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CloudinaryService {
 
-  private cloudName = 'do6tetrgc';
-  private folderName = 'portfolio'; // your folder in Cloudinary
+  private cloudName = environment.cloudName; 
+  private folderName = environment.folderName;
   private baseUrl = `https://res.cloudinary.com/${this.cloudName}`;
   private images$!: Observable<string[]>;
 
