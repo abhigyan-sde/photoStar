@@ -10,24 +10,19 @@ import { Component } from '@angular/core';
 export class RatesComponent {
   packages = [
     {
-      name: 'Bronze',
-      price: '$200',
-      description: '1-hour session • 15 edited photos • 1 location'
-    },
-    {
       name: 'Silver',
-      price: '$350',
-      description: '2-hour session • 30 edited photos • 1-2 locations'
+      price: '$100',
+      description: '30-minute session • 10 edited photos'
     },
     {
       name: 'Gold',
-      price: '$500',
-      description: 'Half-day session • 60 edited photos • Multiple locations'
+      price: '$200',
+      description: '1-hour session • 30 edited photos'
     },
     {
       name: 'Platinum',
-      price: '$800',
-      description: 'Full-day session • 100+ edited photos • Unlimited locations + prints'
+      price: '$400',
+      description: '4-hour session • 70 edited photos'
     }
   ];
 }
